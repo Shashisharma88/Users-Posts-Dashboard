@@ -35,9 +35,13 @@ export default function UsersPage() {
       <h1 className="text-2xl font-bold mb-6 flex justify-center">Users Dashboard</h1>
       <div className="">
         {isUsersLoading 
-          ? Array.from({ length: 8 }).map((_, index) => (
-              <Skeleton key={index} className="h-48 w-full" />
-            )):
+          ?(
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-5xl mx-auto p-6 lg:px-1 gap-4">
+              {Array.from({ length: 8 }).map((_, index) => (
+                <Skeleton key={index} className="h-56 w-full rounded-lg" />
+              ))}
+            </div>
+          ):
             (<UserList users={users as User[]}/>)
         }
       </div>

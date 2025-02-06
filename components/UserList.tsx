@@ -19,7 +19,7 @@ export default function UserList({ users }: UserListProps) {
     .sort((a, b) => sortOrder === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name));
 
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-6 ">
+    <div className="max-w-5xl mx-auto p-6 lg:px-1 space-y-6 ">
       
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <Input
